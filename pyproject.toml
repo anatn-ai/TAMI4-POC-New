@@ -1,17 +1,24 @@
-[project]
+[tool.poetry]
 name = "tami4-poc-v3"
 version = "0.1.0"
 description = "Tami4 Marketing Multi-Agent System"
-requires-python = ">=3.11"
-dependencies = [
-    "google-adk>=0.1.0",
-    "google-cloud-aiplatform[adk,agent-engines]>=1.70.0",
-    "google-cloud-bigquery>=3.25.0",
-    "google-genai>=0.3.0",
-    "matplotlib>=3.7.0",
-    "pandas>=2.0.0",
-    "seaborn>=0.12.0",
-    "python-dotenv>=1.0.0",
-    "uvicorn>=0.30.0",
-    "fastapi>=0.111.0"
-]
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "tami4_agent"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+google-adk = "^0.1.0"
+google-cloud-aiplatform = {extras = ["adk", "agent-engines"], version = "^1.70.0"}
+google-cloud-bigquery = "^3.25.0"
+google-genai = "^0.3.0"
+matplotlib = "^3.7.0"
+pandas = "^2.0.0"
+seaborn = "^0.12.0"
+python-dotenv = "^1.0.0"
+uvicorn = "^0.30.0"
+fastapi = "^0.111.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
